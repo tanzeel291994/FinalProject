@@ -1,26 +1,16 @@
-package com.udacity.gradle.builditbigger;
+package com.udacity.gradle.builditbigger.paid;
 
 import android.content.Context;
 import android.content.Intent;
-import android.os.AsyncTask;
-import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
+import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Toast;
 
 import com.example.Joke;
 import com.example.androidfetchlibrary.DisplayActivity;
-import com.example.user.myapplication.backend.myApi.MyApi;
-import com.google.api.client.extensions.android.http.AndroidHttp;
-import com.google.api.client.extensions.android.json.AndroidJsonFactory;
-import com.google.api.client.googleapis.services.AbstractGoogleClientRequest;
-import com.google.api.client.googleapis.services.GoogleClientRequestInitializer;
-
-import java.io.IOException;
-
+import com.udacity.gradle.builditbigger.R;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -32,7 +22,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         joke=new Joke();
         context=this;
-        Log.i("TAG","main");
+
     }
 
 
@@ -62,11 +52,9 @@ public class MainActivity extends AppCompatActivity {
 
         //new GetJokeAsyncTask().execute();
         //Toast.makeText(this,joke.getJoke(), Toast.LENGTH_SHORT).show();
-       Intent intent=new Intent(context,DisplayActivity.class);
+        Intent intent=new Intent(context,DisplayActivity.class);
         //intent.putExtra("joke",s);
         startActivity(intent);
-       // new GetJokeAsyncTask().execute();
+        // new GetJokeAsyncTask().execute();
     }
-
-
 }
